@@ -12,12 +12,19 @@
 ...
  */
 function fibo(idx, memo = {}) {
-  if (idx <= 2) return 1;
+  if (idx < 2) return idx;
   if (idx in memo) return memo[idx];
   // n번째의 값은 n-1번째와 n-2번째의 값의 합과 같다.
   memo[idx] = fibo(idx - 1, memo) + fibo(idx - 2, memo);
-  console.log(memo[idx]);
   return memo[idx];
 }
 
 console.log(fibo(10));
+
+/** 다른 버전의 풀이 */
+function typeTwo(idx, memo = {}) {
+  if (idx < 2) return idx;
+  else return typeTwo(idx - 1, memo) + typeTwo(idx - 2, memo);
+}
+
+console.log("typeTwo", typeTwo(10));

@@ -1,12 +1,11 @@
-/** 이진 탐색(Binary Search)
- *
- *  이진 탐색의 전제 조건
- *      - 정렬된 배열 : 배열이 오름차순으로 정렬이 되어있을 때만 유효
+/**
+ * 이진 탐색(Binary Search) : 탐색 범위를 이용한 검색으로, 배열이 오름차순으로 정렬 시 유효
+ * @param {number[]} array
+ * @param {number} target
+ * @returns {string | number}
  */
 
-const array = [1, 2, 3, 4, 5, 6, 7, 8];
-const target = 4; // 찾고자 하는 값
-function bs() {
+function bs(array, target) {
   let lo = 0; // 탐색 범위의 시작 index
   let hi = array.length - 1; // 탐색 범위의 끝 index
   while (lo <= hi) {
@@ -25,4 +24,4 @@ function bs() {
   return -1; // 찾지 못하는 경우 -1 반환
 }
 
-bs();
+bs([1, 2, 3, 4, 5, 6, 7, 8], 4);
